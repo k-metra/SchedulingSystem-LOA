@@ -215,6 +215,7 @@
             sortBox.Font = new Font("Segoe UI", 10F);
             sortBox.ForeColor = Color.FromArgb(68, 88, 112);
             sortBox.ItemHeight = 30;
+            sortBox.Items.AddRange(new object[] { "NONE", "SUBJECT CODE", "SUBJECT NAME", "SPECIALIZATION", "GRADE LEVEL", "SECTION", "ROOM", "TEACHER" });
             sortBox.Location = new Point(219, 275);
             sortBox.Name = "sortBox";
             sortBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -226,7 +227,7 @@
             guna2ImageButton1.BackgroundImage = Properties.Resources.search_line;
             guna2ImageButton1.BackgroundImageLayout = ImageLayout.Center;
             guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.HoverState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.HoverState.ImageSize = new Size(0, 0);
             guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
