@@ -63,6 +63,16 @@ namespace SchedulingSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap account_circle_line {
+            get {
+                object obj = ResourceManager.GetObject("account-circle-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_off_line {
             get {
                 object obj = ResourceManager.GetObject("eye-off-line", resourceCulture);
@@ -86,6 +96,26 @@ namespace SchedulingSystem.Properties {
         internal static System.Drawing.Bitmap login_box_line {
             get {
                 object obj = ResourceManager.GetObject("login-box-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logout_box_line {
+            get {
+                object obj = ResourceManager.GetObject("logout-box-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question_line {
+            get {
+                object obj = ResourceManager.GetObject("question-line", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchedulingSystem.UserControls.SettingsWindows;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,13 @@ namespace SchedulingSystem.UserControls
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            addControl(new AccountSettings());
+        }
+
+        private void addControl(Control control)
+        {
+            settingsPanel.Controls.Clear();
+            settingsPanel.Controls.Add(control);
         }
 
         private void logoutBtn_Click(object sender, EventArgs e)
@@ -30,6 +38,16 @@ namespace SchedulingSystem.UserControls
 
             }
             mainForm.Logout();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            addControl(new AccountSettings());
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            addControl(new About());
         }
     }
 }
