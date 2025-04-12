@@ -115,6 +115,70 @@ namespace SchedulingSystem.UserControls
                 );
             scheduleControl.ShowDialog(this);
         }
+
+        private void sortBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(searchBox.Text)) { refresh(); return; }
+
+            string searchQuery = searchBox.Text;
+            string sortQuery = (!String.IsNullOrEmpty(sortBox.Text)) ? sortBox.Text : "NONE";
+
+
+            // convert query to readable parameter for MySQL
+            switch (sortQuery)
+            {
+                case "SUBJECT NAME":
+                    sortQuery = "subjName";
+                    break;
+                case "SUBJECT CODE":
+                    sortQuery = "subjCode";
+                    break;
+                case "GRADE LEVEL":
+                    sortQuery = "gradeLevel";
+                    break;
+                default:
+                    // Keep it as-is, but make it lowercase
+                    sortQuery = sortQuery.ToLower();
+                    break;
+            }
+
+            string newQuery;
+
+            if (sortQuery.Equals("none"))
+            {
+                newQuery = "SELECT * FROM schedules WHERE @value in (schedule_id, subjName, subjCode, specialization, gradeLevel, room, teacher, section)";
+            } else
+            {
+                newQuery = $"SELECT * FROM schedules WHERE {sortQuery} = @value";
+            }
+
+            Database.Query = newQuery;
+            MySqlCommand cmd = new MySqlCommand(Database.Query, Database.Connection);
+            cmd.Parameters.AddWithValue("@value", searchQuery);
+            DataTable dt = Database.resolveToDataTable(cmd);
+
+            SchedulesList.Items.Clear();
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = dr["subjCode"].ToString();
+
+                item.SubItems.Add(dr["subjName"].ToString());
+                item.SubItems.Add(dr["specialization"].ToString());
+                item.SubItems.Add(dr["gradeLevel"].ToString());
+                item.SubItems.Add(dr["room"].ToString());
+                item.SubItems.Add(dr["teacher"].ToString());
+                item.SubItems.Add(dr["section"].ToString());
+                item.SubItems.Add(dr["date"].ToString());
+                SchedulesList.Items.Add(item);
+            }
+        }
     }
 
 

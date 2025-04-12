@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,8 @@ namespace SchedulingSystem
 
         private static Account? currentAcc;
 
+
+        public static MySqlConnection? Connection { get { return connection; } }
         public static void Connect()
         {
             if (connection == null)
@@ -38,9 +41,8 @@ namespace SchedulingSystem
 
         public static MySqlCommand setCommand()
         {
-            if (command == null) {
-                command = new MySqlCommand();
-            }
+            command = new MySqlCommand();
+            
 
             command.CommandType = System.Data.CommandType.Text;
             command.Connection = connection;
@@ -87,6 +89,21 @@ namespace SchedulingSystem
             adapter.Fill(dataTable);
 
             return dataTable;
+        }
+
+        public static DataTable resolveToDataTable(MySqlCommand cmd)
+        {
+            adapter = new MySqlDataAdapter(cmd);
+
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+
+            return dataTable;
+        } 
+
+        public static void addParameter(string param, string value)
+        {
+            command.Parameters.AddWithValue(param, value);
         }
 
         public static Account? currentAccount

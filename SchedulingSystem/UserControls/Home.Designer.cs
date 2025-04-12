@@ -221,6 +221,7 @@
             sortBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
             sortBox.Size = new Size(165, 36);
             sortBox.TabIndex = 6;
+            sortBox.SelectedIndexChanged += sortBox_SelectedIndexChanged;
             // 
             // guna2ImageButton1
             // 
@@ -238,6 +239,7 @@
             guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             guna2ImageButton1.Size = new Size(36, 36);
             guna2ImageButton1.TabIndex = 7;
+            guna2ImageButton1.Click += guna2ImageButton1_Click;
             // 
             // Home
             // 
