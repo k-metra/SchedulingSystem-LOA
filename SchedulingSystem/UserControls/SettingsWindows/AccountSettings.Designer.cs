@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             userBox = new Guna.UI2.WinForms.Guna2TextBox();
             passBox = new Guna.UI2.WinForms.Guna2TextBox();
             label2 = new Label();
             fullName = new Guna.UI2.WinForms.Guna2TextBox();
             label3 = new Label();
+            saveBtn = new Button();
+            changePassBtn = new Button();
             SuspendLayout();
             // 
             // label1
@@ -54,7 +56,7 @@
             // 
             // userBox
             // 
-            userBox.CustomizableEdges = customizableEdges7;
+            userBox.CustomizableEdges = customizableEdges1;
             userBox.DefaultText = "";
             userBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             userBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -67,13 +69,14 @@
             userBox.Name = "userBox";
             userBox.PlaceholderText = "";
             userBox.SelectedText = "";
-            userBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            userBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
             userBox.Size = new Size(200, 36);
             userBox.TabIndex = 1;
+            userBox.TextChanged += userBox_TextChanged;
             // 
             // passBox
             // 
-            passBox.CustomizableEdges = customizableEdges9;
+            passBox.CustomizableEdges = customizableEdges3;
             passBox.DefaultText = "";
             passBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             passBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -85,12 +88,12 @@
             passBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             passBox.Location = new Point(128, 62);
             passBox.Name = "passBox";
+            passBox.PasswordChar = '•';
             passBox.PlaceholderText = "";
             passBox.SelectedText = "";
-            passBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            passBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
             passBox.Size = new Size(200, 36);
             passBox.TabIndex = 3;
-            passBox.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -104,7 +107,7 @@
             // 
             // fullName
             // 
-            fullName.CustomizableEdges = customizableEdges11;
+            fullName.CustomizableEdges = customizableEdges5;
             fullName.DefaultText = "";
             fullName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fullName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -117,9 +120,10 @@
             fullName.Name = "fullName";
             fullName.PlaceholderText = "";
             fullName.SelectedText = "";
-            fullName.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            fullName.ShadowDecoration.CustomizableEdges = customizableEdges6;
             fullName.Size = new Size(200, 36);
             fullName.TabIndex = 5;
+            fullName.TextChanged += fullName_TextChanged;
             // 
             // label3
             // 
@@ -131,10 +135,33 @@
             label3.TabIndex = 4;
             label3.Text = "Full Name:";
             // 
+            // saveBtn
+            // 
+            saveBtn.Enabled = false;
+            saveBtn.Location = new Point(430, 281);
+            saveBtn.Name = "saveBtn";
+            saveBtn.Size = new Size(75, 45);
+            saveBtn.TabIndex = 6;
+            saveBtn.Text = "Save";
+            saveBtn.UseVisualStyleBackColor = true;
+            saveBtn.Click += saveBtn_Click;
+            // 
+            // changePassBtn
+            // 
+            changePassBtn.Location = new Point(345, 63);
+            changePassBtn.Name = "changePassBtn";
+            changePassBtn.Size = new Size(113, 36);
+            changePassBtn.TabIndex = 7;
+            changePassBtn.Text = "Change Password";
+            changePassBtn.UseVisualStyleBackColor = true;
+            changePassBtn.Click += changePassBtn_Click;
+            // 
             // AccountSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(changePassBtn);
+            Controls.Add(saveBtn);
             Controls.Add(fullName);
             Controls.Add(label3);
             Controls.Add(passBox);
@@ -155,5 +182,7 @@
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox fullName;
         private Label label3;
+        private Button saveBtn;
+        private Button changePassBtn;
     }
 }

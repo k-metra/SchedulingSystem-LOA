@@ -198,6 +198,24 @@ namespace SchedulingSystem
                     currentAccount = null;
                 }
             }
+
+            public void Save()
+            {
+                Query = "UPDATE accounts SET username = @user, `password` = @pass, full_name = @fn WHERE account_id = @id";
+                MySqlCommand cmd = setCommand();
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@user", username);
+                cmd.Parameters.AddWithValue("@pass", password);
+                cmd.Parameters.AddWithValue("@fn", fullName);
+                cmd.Parameters.AddWithValue("@id", AccountId);
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                if (rowsAffected < 1) MessageBox.Show("Something went wrong trying to save the information."); return;
+
+                MessageBox.Show("Successfully saved.");
+            }
         }
     }
 }
