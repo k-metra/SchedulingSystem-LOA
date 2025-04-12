@@ -227,7 +227,7 @@
             // 
             guna2ImageButton1.BackgroundImage = Properties.Resources.search_line;
             guna2ImageButton1.BackgroundImageLayout = ImageLayout.Center;
-            guna2ImageButton1.CheckedState.ImageSize = new Size(64, 64);
+            guna2ImageButton1.CheckedState.ImageSize = new Size(0, 0);
             guna2ImageButton1.HoverState.ImageSize = new Size(0, 0);
             guna2ImageButton1.Image = (Image)resources.GetObject("guna2ImageButton1.Image");
             guna2ImageButton1.ImageOffset = new Point(0, 0);
