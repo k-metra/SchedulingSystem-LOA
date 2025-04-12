@@ -75,6 +75,7 @@
             linkLabel2.TabIndex = 2;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "https://www.facebook.com/m.trakurt";
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // linkLabel1
             // 
@@ -85,6 +86,7 @@
             linkLabel1.TabIndex = 1;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "https://github.com/k-metra/SchedulingSystem-LOA";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label2
             // 

@@ -80,6 +80,7 @@
             guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             guna2Button2.CheckedState.BorderColor = Color.White;
             guna2Button2.CheckedState.CustomBorderColor = Color.DimGray;
+            guna2Button2.CheckedState.FillColor = Color.White;
             guna2Button2.CustomBorderColor = Color.Transparent;
             guna2Button2.CustomBorderThickness = new Padding(0, 0, 0, 3);
             guna2Button2.CustomizableEdges = customizableEdges3;
@@ -103,8 +104,10 @@
             // guna2Button1
             // 
             guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            guna2Button1.Checked = true;
             guna2Button1.CheckedState.BorderColor = Color.White;
             guna2Button1.CheckedState.CustomBorderColor = Color.DimGray;
+            guna2Button1.CheckedState.FillColor = Color.White;
             guna2Button1.CustomBorderColor = Color.Transparent;
             guna2Button1.CustomBorderThickness = new Padding(0, 0, 0, 3);
             guna2Button1.CustomizableEdges = customizableEdges5;
@@ -113,6 +116,7 @@
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button1.FillColor = Color.White;
+            guna2Button1.FocusedColor = Color.White;
             guna2Button1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Image = Properties.Resources.account_circle_line;
